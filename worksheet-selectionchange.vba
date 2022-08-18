@@ -25,9 +25,9 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
     'If BOTH conditions are true, adds the appropriate prefix to the numbers in the cell.
     'You DO NOT need to type [COUNTY] or [STATE] at the beginning of each number in columns A or B! The prefix will be added automatically when you select or tab into a different cell.
     
-    'Again, if you need to expand the range for this function, simply change ("A3:A500") to ("A3:A1000") or whatever. Make sure to include the quotes. Same goes _
-    for any column such as B.
+    'Again, if you need to expand the range for this function, simply change ("A3:A500") to ("A3:A1000") or whatever. Make sure to include the quotes. Same goes for any column such as B.
     'Column A is for the [COUNTY] number. Column B is for the [STATE] number.
+    
     Dim intRCCount, intShellReviewCount, intClosed, intNotRCCount, intAntibody, intDataProjects, intReinfection, intNDrive, intCompleteCount, intBreakthroughs, intOpenDRRCount, intCaseReports, intSymptomResolution As Integer
     intShellReviewCount = 0
     intBreakthroughs = 0
@@ -72,7 +72,7 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
             cell.Value = "[STATE]" & cell.Value
         End If
     Next
-    ' There was probably a more efficient way to do something like the below, but this worked for the purpose of the worksheet. 
+    ' There is probably a more efficient way to do something like the below, but this worked for the purpose of the worksheet. 
     For Each cell In Range("C3:C200")
         If InStr(cell.Value, "Open Investigations") Or InStr(cell.Value, "DRR") Or InStr(cell.Value, "OI") Then
             intOpenDRRCount = intOpenDRRCount + 1
